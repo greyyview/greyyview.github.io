@@ -50,8 +50,16 @@
       border-bottom: 2px solid #fff;
       padding-bottom: 0.2em;
       margin-bottom: 0.2em;
-      max-width: 200px;
+      max-width: 220px;
       width: 100%;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .content {
+      display: none;
     }
 
     ul {
@@ -139,14 +147,20 @@
   <section>
     <h2><center>About Me</center></h2>
     <br>
-    <h3>Hello! I'm Greyview.</h3>
-    <p>I'm a young and aspiring web developer. Currently on a journey of continuous learning, my primary focus is on HTML/HTML5 and JavaScript, with Java being a language I'm eagerly exploring.</p>
+    <h3 onclick="toggleContent(this)">Hello, I'm Greyview ▼</h3>
+    <div class="content">
+      <p>I'm a young and aspiring web developer. Currently on a journey of continuous learning, my primary focus is on HTML/HTML5 and JavaScript, with Java being a language I'm eagerly exploring.</p>
+    </div>
 
-    <h3>GitHub Journey</h3>
-    <p>I bring previous GitHub experience, and the <b>greyyview</b> account marks the beginning of a fresh chapter.</p>
+    <h3 onclick="toggleContent(this)">GitHub Journey ▼</h3>
+    <div class="content">
+      <p>I bring previous GitHub experience, and the <b>greyyview</b> account marks the beginning of a fresh chapter.</p>
+    </div>
 
-    <h3>Contact</h3>
-    <p>Feel free to reach out to me at <b>greyyview@gmail.com</b> for inquiries. For more casual discussions, you can find me on Discord at <b>@forwarduntodawn.</b></p>
+    <h3 onclick="toggleContent(this)">Contact ▼</h3>
+    <div class="content">
+      <p>Feel free to reach out to me at <b>greyyview@gmail.com</b> for inquiries. For more casual discussions, you can find me on Discord at <b>@forwarduntodawn.</b></p>
+    </div>
   </section>
 
   <h2></h2>
@@ -167,6 +181,13 @@
 <footer>
   &copy; 2024 Greyview
 </footer>
+
+<script>
+    function toggleContent(element) {
+      var content = element.nextElementSibling;
+      content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
+    }
+  </script>
 
 </body>
 
